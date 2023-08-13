@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "a907d914-d39d-4d55-b168-e7dde864fcf4",
+		"name": "Book API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2746428",
+		"_collection_link": "https://planetary-sunset-455843.postman.co/workspace/Learning~7fe32f5e-ba85-4eb1-a956-03dfadb8bdfa/collection/2746428-a907d914-d39d-4d55-b168-e7dde864fcf4?action=share&source=collection_link&creator=2746428"
+	},
+	"item": [
+		{
+			"name": "Select All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GoGinAPI}}/book",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Select All Books Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GoGinAPI}}/book/search/year/desc",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"book",
+						"search",
+						"year",
+						"desc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Select Book Using ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GoGinAPI}}/book/1",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"MyBook\",\r\n    \"year\": \"2022\",\r\n    \"description\": \"My description\",\r\n    \"book_cover\": \"https://www.rtp.pt\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GoGinAPI}}/book",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{GoGinAPI}}/book/3",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"book",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book Using ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTY5MTg4NTk5OSwiaWF0IjoxNjkxODg0MTk5LCJpc3MiOiJJU1NVRVIgQk9PSyBBUEkifQ.7i7bQtaypqAtxcOty-qUSm75_ih7NHpaP1UElSFTxHE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"10 Novo MyBook\",\r\n    \"year\": \"2022\",\r\n    \"description\": \"Novo My description\",\r\n    \"book_cover\": \"Novo https://www.rtp.pt\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GoGinAPI}}/book/12",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"book",
+						"12"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "GoGinAPI",
+			"value": "http://localhost:3000/api/v1"
+		}
+	]
+}

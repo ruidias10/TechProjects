@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "d622d9a7-da5f-4cc6-af85-d4efb9024507",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2746428",
+		"_collection_link": "https://planetary-sunset-455843.postman.co/workspace/Learning~7fe32f5e-ba85-4eb1-a956-03dfadb8bdfa/collection/2746428-d622d9a7-da5f-4cc6-af85-d4efb9024507?action=share&source=collection_link&creator=2746428"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"rui.dias10@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GoGinAPI}}/auth/login",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "GoGinAPI",
+			"value": "http://localhost:3000/api/v1"
+		}
+	]
+}

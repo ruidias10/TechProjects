@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "08ba817e-b95c-422d-a4e6-1a5d21438de8",
+		"name": "User API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2746428",
+		"_collection_link": "https://planetary-sunset-455843.postman.co/workspace/Learning~7fe32f5e-ba85-4eb1-a956-03dfadb8bdfa/collection/2746428-08ba817e-b95c-422d-a4e6-1a5d21438de8?action=share&source=collection_link&creator=2746428"
+	},
+	"item": [
+		{
+			"name": "Select All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GoGinAPI}}/user",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Select User Using ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTY5MTk0NTQzMCwiaWF0IjoxNjkxOTQzNjMwLCJpc3MiOiJJU1NVRVIgQk9PSyBBUEkifQ.S-HxpboXRwR02H05_ygvdVzymsxfh21lKBgBRsPG1LA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GoGinAPI}}/user/1",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"name\": \"Rui Dias\",\r\n    \"password\": \"password123\",\r\n    \"email\": \"32rui.dias10@gmail.com\",\r\n    \"profile_picture\": \"https://www.sapo.pt/img\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GoGinAPI}}/user",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{GoGinAPI}}/user/15",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"user",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Using ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Update Rui Dias\",\r\n    \"password\": \"Update password123!!!!\",\r\n    \"email\": \"Update rui.dias10@gmail.com\",\r\n    \"profile_picture\": \"https://www.rtp.pt/img\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GoGinAPI}}/user/1",
+					"host": [
+						"{{GoGinAPI}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "GoGinAPI",
+			"value": "http://localhost:3000/api/v1"
+		}
+	]
+}
